@@ -1,9 +1,10 @@
 <script>
-    export let goToPreviousSlide; // Fonction pour revenir à la slide précédente
-  </script>
+    export let goToPreviousSlide;
+    export let goToNextSlide; 
+    </script>
   
   <div class="slide active">
-    <button class="btn" on:click={goToPreviousSlide}>Retour</button>
+
   
     <div style="
         font-family: Arial, sans-serif; 
@@ -28,6 +29,8 @@
       </p>
       <p style="text-align: center;">✨ <strong style="color: #FF3E00;">Svelte</strong> : simplicité, modernité et performance. ✨</p>
     </div>
+    <button class="btn" on:click={goToPreviousSlide}>précédente</button>
+    <button class="btn" on:click={goToNextSlide}>avancer</button>
   </div>
   
   <style>

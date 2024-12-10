@@ -1,17 +1,20 @@
 <script>
     import Footer from './components/footer.svelte';
-import Slide1 from './components/Slide1.svelte';
+    import Slide1 from './components/Slide1.svelte';
     import Slide2 from './components/Slide2.svelte';
+  import Slide3 from './components/Slide3.svelte';
   
     let currentSlide = 1;
   
     const goToNextSlide = () => {
-      currentSlide = 2;
+      currentSlide += 1;
     };
   
     const goToPreviousSlide = () => {
-      currentSlide = 1;
+      currentSlide -= 1;
     };
+  
+
   </script>
   
   <style lang="postcss">
@@ -56,8 +59,13 @@ import Slide1 from './components/Slide1.svelte';
     {/if}
   
     {#if currentSlide === 2}
-      <Slide2 {goToPreviousSlide} />
+      <Slide2 {goToNextSlide} {goToPreviousSlide} />
     {/if}
+
+    {#if currentSlide === 3}
+    <Slide3 {goToNextSlide} {goToPreviousSlide} />
+    {/if}
+
   </div>
   <Footer />
   
